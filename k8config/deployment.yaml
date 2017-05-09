@@ -12,8 +12,9 @@ spec:
       containers:
       - name: core-server
         image: atulm.azurecr.io/docker-dotnetcore:latest
+        imagePullSecrets:
+          - name: azurecontainerreg
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
-        imagePullSecrets:
-        - name: azurecontainerreg
+        
