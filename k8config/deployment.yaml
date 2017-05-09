@@ -1,18 +1,19 @@
-apiVersion: extensions/v1beta1
+apiVersion: api/v1
 kind: Deployment
 metadata:
-  name: stupid-server-deployment
+  name: core-server-deployment
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: stupid-server
+        app: core-server
     spec:
       containers:
-      - name: stupid-server
-        image: <container image>
+      - name: core-server
+        image: atulm.azurecr.io/docker-dotnetcore:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
-# vim: set ts=2 expandtab!:
+        imagePullSecrets:
+        - name: azurecontainerreg
