@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stupid-server
+  labels:
+    app: stupid-server
+spec:
+  selector:
+    app: stupid-server
+  ports:
+  - port: 8000
+    protocol: TCP
+    nodePort: 30061
+  type: LoadBalancer

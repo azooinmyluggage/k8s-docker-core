@@ -1,0 +1,4 @@
+kubectl create -f deployment.yaml
+kubectl get deployments
+kubectl create -f service.yaml
+kubectl get services
