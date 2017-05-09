@@ -4,6 +4,8 @@ metadata:
   name: coreserverdeployment
 spec:
   replicas: 1
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
