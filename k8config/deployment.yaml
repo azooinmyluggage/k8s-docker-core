@@ -1,20 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: core-server-deployment
+  name: coreserverdeployment
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: core-server
+        app: coreserver
     spec:
       containers:
       - name: core-server
         image: atulm.azurecr.io/docker-dotnetcore:latest
-        imagePullSecrets:
-          - name: azurecontainerreg
-        imagePullPolicy: Always
         ports:
         - containerPort: 8000
-        
+      imagePullSecrets:
+        - name: azurecontainerreg
