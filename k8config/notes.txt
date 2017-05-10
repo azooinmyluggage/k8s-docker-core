@@ -2,3 +2,8 @@ kubectl create -f deployment.yaml
 kubectl get deployments
 kubectl create -f service.yaml
 kubectl get services
+
+
+kubectl delete deployment coreserverdeployment
+
+az acs kubernetes browse -g atulm-rg-acs -n containerservice-atulm-rg-acs

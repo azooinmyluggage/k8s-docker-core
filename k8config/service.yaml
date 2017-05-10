@@ -8,7 +8,5 @@ spec:
   selector:
     app: coreserver
   ports:
-  - port: 8000
-    protocol: TCP
-    nodePort: 30062
+  - port: 8080
   type: LoadBalancer

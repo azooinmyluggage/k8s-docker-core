@@ -13,8 +13,8 @@ spec:
     spec:
       containers:
       - name: core-server
-        image: atulm.azurecr.io/docker-dotnetcore:latest
+        image: atulm.azurecr.io/docker-dotnetcore:8080
         ports:
-        - containerPort: 8000
+        - containerPort: 8080
       imagePullSecrets:
         - name: azurecontainerreg
