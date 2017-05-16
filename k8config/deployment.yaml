@@ -3,9 +3,13 @@ kind: Deployment
 metadata:
   name: coreserverdeployment
 spec:
-  replicas: 1
+  replicas: 4
   strategy:
     type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
   template:
     metadata:
       labels:
@@ -13,7 +17,8 @@ spec:
     spec:
       containers:
       - name: core-server
-        image: atulm.azurecr.io/docker-dotnetcore:8080
+        image: atulm.azurecr.io/docker-dotnetcore:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
       imagePullSecrets:
